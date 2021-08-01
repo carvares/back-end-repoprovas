@@ -12,10 +12,18 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/users", userController.getUsers);
-
+app.get("/professors", userController.getProfessors);
+app.get("/subjects", userController.getSubjects)
+app.get("/tests/:id",userController.getTests)
+app.get("/tests/",userController.getTests)
+app.get("/semesters", userController.getSemesters)
+app.get("/relations", userController.getRelations)
+app.post("/sendtest", userController.newTest)
 export async function init () {
+
   await connectDatabase();
+  
 }
 
 export default app;
+
