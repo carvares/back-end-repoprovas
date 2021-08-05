@@ -19,6 +19,9 @@ app.get("/tests/",userController.getTests)
 app.get("/semesters", userController.getSemesters)
 app.get("/relations", userController.getRelations)
 app.post("/sendtest", userController.newTest)
+app.get("/abacaxi", (req,res)=> {
+  res.send("abacaxi")
+})
 export async function init () {
 
   await connectDatabase();
